@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/icon32x32.png">
+    <script src="https://kit.fontawesome.com/b0a5e709ca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/myStyle.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <title>The Beauty Cosmetic</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand mx-auto justify-content-center me-lg-5 w-25">
+                    <img src="img/logo1.png" class="w-100" alt="The Beauty">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav"
+                    aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i id="bar" class="fas fa-bars"></i></span>
+                </button>
+                <form class="d-flex input-group ms-3 mt-2">
+                    <input type="search" class="form-control form-control-sm ps-3 px-5 justify-content-start"
+                        id="mySearchbar" width="50%" placeholder="Find your items here!" aria-label="Search"
+                        aria-describedby="#searchBtn">
+                    <button class="btn btn-outline-secondary ms-2" type="button" id="searchBtn">
+                        <i class="fa-solid fa-magnifying-glass fa-md" id="searchIcon"></i>
+                    </button>
+                </form>
+
+                <div class="collapse navbar-collapse" id="myNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ms-xl-5">
+                            <a class="nav-link" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="wishlist.html" class="nav-link ms-xl-5"><i class="fa-solid fa-heart fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#singIn" class="nav-link ms-xl-5" data-bs-toggle="modal"
+                                data-bs-target="#signIn">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#singUp" class="nav-link" data-bs-toggle="modal"
+                                data-bs-target="#signUp">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navigation Bar -->
+
+        <!-- Modal SignIn and SignUp -->
+        <div class="modal" id="signIn">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sign In</h4>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="myForm" onsubmit="return Form1()" method="post">
+                            <div class="mb-3">
+                                <input type="email" name="mail" class="form-control" placeholder="Enter your E-mail">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" id="pwdLogIn" name="pass" class="form-control"
+                                    placeholder="Enter your password">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-check-label"><input type="checkbox" class="form-check-input">
+                                    Remember me</label>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <button type="submit" class="px-5 btn btn-primary" value="Log in">Log in</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="modal" id="signUp">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Register</h4>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="MyForm" onsubmit="return Form2()" method="post">
+                            <div class="mb-3">
+                                <label>Enter Your Name:</label>
+                                <div class="input-group">
+                                    <input type="text" name="fName" class="form-control" placeholder="First Name">
+                                    <input type="text" name="lName" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email:</label>
+                                <input type="email" name="mail" class="form-control" placeholder="Enter your E-mail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="username">Create Username:</label>
+                                <input type="username" name="user" class="form-control"
+                                    placeholder="Create your username.">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pwd">Password:</label>
+                                <input type="password" name="regiPass" class="form-control"
+                                    placeholder="Create your password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="re-pwd">Re-enter password:</label>
+                                <input type="password" class="form-control" name="rPass"
+                                    placeholder="Please re-enter your password.">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-check-label"><input type="checkbox" class="form-check-input">
+                                    I agree on <a href="#">Terms</a>
+                                    and <a href="#">Conditions</a>.</label>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <button type="submit" class="px-5 btn btn-primary" value="Sign Up">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Modal Sign In/Up -->
+        <!-- Start Menu-bar -->
+        <div class="menu-bar">
+            <ul class="sub-menu">
+                <li class="categories dropdown"><a href="shop.html" class="cate-item" data-bs-toggle="dropdown">new</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html" class="dropdown-item">new makeup</a></li>
+                        <li><a href="shop.html" class="dropdown-item">new skincare</a></li>
+                        <li><a href="shop.html" class="dropdown-item">new tools</a></li>
+                    </ul>
+                </li>
+                <li class="categories dropdown"><a href="shop.html" class="cate-item"
+                        data-bs-toggle="dropdown">Brand</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html" class="dropdown-item">3ce</a></li>
+                        <li><a href="shop.html" class="dropdown-item">etude house</a></li>
+                        <li><a href="shop.html" class="dropdown-item">somebyme</a></li>
+                        <li><a href="shop.html" class="dropdown-item">innifree</a></li>
+                        <li><a href="shop.html" class="dropdown-item">april skin</a></li>
+                        <li><a href="shop.html" class="dropdown-item">nature republic</a></li>
+                    </ul>
+                </li>
+                <li class="categories dropdown"><a href="shop.html" class="cate-item" data-bs-toggle="dropdown">Eyes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html" class="dropdown-item">eyes liner</a></li>
+                        <li><a href="shop.html" class="dropdown-item">eyes shadow</a></li>
+                        <li><a href="shop.html" class="dropdown-item">eyes brow</a></li>
+                    </ul>
+                </li>
+                <li class="categories dropdown"><a href="shop.html" class="cate-item" data-bs-toggle="dropdown">lip</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html" class="dropdown-item">lip tint</a></li>
+                        <li><a href="shop.html" class="dropdown-item">lipstick</a></li>
+                        <li><a href="shop.html" class="dropdown-item">lip balm</a></li>
+                    </ul>
+                </li>
+                <li class="categories dropdown"><a href="shop.html" class="cate-item" data-bs-toggle="dropdown">face</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html" class="dropdown-item">primer</a></li>
+                        <li><a href="shop.html" class="dropdown-item">foundation</a></li>
+                        <li><a href="shop.html" class="dropdown-item">cushion</a></li>
+
+                    </ul>
+                </li>
+                <li class="categories dropdown"><a href="shop.html" class="cate-item"
+                        data-bs-toggle="dropdown">skincare</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html" class="dropdown-item">mask</a></li>
+                        <li><a href="shop.html" class="dropdown-item">tonner</a></li>
+                        <li><a href="shop.html" class="dropdown-item">serum</a></li>
+                        <li><a href="shop.html" class="dropdown-item">sun screen</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">tools</a>
+                </li>
+            </ul>
+        </div> <!-- End Menu-bar -->
+    </header>
+    <main class="container mt-3">
+        <h2 class="h1-responsive font-weight-bold text-center mb-5">Blog</h2>
+        <hr>
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <iframe src="https://www.youtube.com/embed/1nd7ulawado" class="d-block mx-auto" frameborder="0"
+                    allowfullscreen="" width="350px" height="220px" $image_border_style=""></iframe>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <h3><a href="#" class="text-decoration-none text-black">
+                        <p>Body lotions you might want to gatekeep to yourself</p>
+                    </a></h3>
+                <p>Hey guys! Welcome back to our channel. It's great to see you all. Do you ever just walk pass a
+                    stranger on the street and be like wow they smell so good, wonder what they're using. Good news cuz
+                    this video can guide you ...</p>
+                </p>
+                <div class="d-flex mt-5">
+                    <span>214 VIEWS </span>&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="fa-solid fa-comment mt-1"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>0 COMMENT </span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-eye mt-1"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-lg-6 col-sm-6">
+                <img src="img/Blog/1.png" class="d-block mx-auto" alt="">
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <h3><a href="#" class="text-decoration-none text-black">
+                        <p>[Best Reviewer] Instant Relief for Sensitive Skin with Frudi…</p>
+                    </a></h3>
+                <p>Who knew Avocadoes can save those who have sensitive skin? Apparently, Avocadoes are known to be
+                    helpful for people who have sensitive skin due to their moisturizing properties that can help to
+                    build the skin barrier as ...</p>
+                <div class="d-flex mt-5">
+                    <span>137 VIEWS </span>&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="fa-solid fa-comment mt-1"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>0 COMMENT </span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-eye mt-1"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-lg-6 col-sm-6">
+                <img src="img/Blog/2.jpg" class="d-block mx-auto" alt="">
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <h3><a href="#" class="text-decoration-none text-black">
+                        <p>[#98 Try Me Review Me] Skin soothing for Acne Prone Skin wit…</p>
+                    </a></h3>
+                <p class="list_cont">Who knew having Matcha in your skincare can bring this much benefits? If you still
+                    haven't know why Matcha is good for your skin you can watch the video or even try it yourself by
+                    applying for Try Me Review Me prog...</p>
+                <div class="d-flex mt-5">
+                    <span>687 VIEWS </span>&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="fa-solid fa-comment mt-1"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>13 COMMENTS </span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-eye mt-1"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-lg-6 col-sm-6">
+                <iframe src="https://www.youtube.com/embed/WDdRA9ypn4I" class="d-block mx-auto" frameborder="0"
+                    allowfullscreen="" width="350px" height="220px" $image_border_style=""></iframe>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <h3><a href="#" class="text-decoration-none text-black">
+                        <p>yeah, too old. Freshly Dropped Beauty Trends 2022 [Eunisoo's…</p>
+                    </a></h3>
+                <p>inda funny when there are tons of vid about 2022 fashion trends, but ZERO content for the
+                    skincare?!yeah, this ain't it, chief.So, Eunisoo comes up with 5 beauty trend predictions in 2022
+                    for you guys.</p>
+                <div class="d-flex mt-5">
+                    <span>712 VIEWS </span>&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="fa-solid fa-comment mt-1"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>0 COMMENT </span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-eye mt-1"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-lg-6 col-sm-6">
+                <img src="img/Blog/3.png" class="d-block mx-auto" alt="">
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <h3><a href="#" class="text-decoration-none text-black">
+                        <p>[Best Reviewer] Celimax Skin Barrier Repair Set by @skinonvs…</p>
+                    </a></h3>
+                <p>Celimax Dual Barrier --- for sensitive/dry skin&nbsp;Hi, guys! I will introduce a set of products
+                    from @celimax.global which function to strengthen the skin barrier and also moisturize the skin. All
+                    four products a...</p>
+                <div class="d-flex mt-5">
+                    <span>596 VIEWS </span>&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="fa-solid fa-comment mt-1"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>1 COMMENT </span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-eye mt-1"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mt-5 py-5 text-black" style="background-color: #F6F0E9;">
+        <div class="row container mx-auto pt-3">
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <img src="img/logo1.png" width="200px" alt="">
+                <p class="pt-3">The Beauty store, we appreciate the certainty, quality, and beauty with which all of you
+                    carry on with your life. We need to be your buddy as you go up against numerous symbols and find
+                    your own character and individual style.</p>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3 mt-4">
+                <h5 class="pb-2">Product & Featured</h5>
+                <ul class="text-uppercase list-unstyled">
+                    <li><a href="#">men</a></li>
+                    <li><a href="#">women</a></li>
+                    <li><a href="#">Facial Care</a></li>
+                    <li><a href="#">Body Care</a></li>
+                    <li><a href="#">new arrivals</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3 mt-4">
+                <h5 class="pb-2">Help & Information</h5>
+                <ul class="text-uppercase list-unstyled">
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Delivery and Pickup Options</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Billing</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3 mt-4">
+                <h5 class="pb-2">Contact Us</h5>
+                <div>
+                    <h6 class="text-uppercase">Address</h6>
+                    <p>National Road 6A, Sangkat Prek Leap, Khan Chroy Changva, Phnom Penh, Cambodia</p>
+                </div>
+                <div>
+                    <h6 class="text-uppercase">Phone</h6>
+                    <p>(855) 87/77 -777-777</p>
+                </div>
+                <div>
+                    <h6 class="text-uppercase">Email</h6>
+                    <p>thebeautycosmetic@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 0; padding: 0;">
+        <div class="copyright mt-5">
+            <div class="row container mx-auto">
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <img src="img/1.png" class="me-3" alt="">
+                    <img src="img/2.png" class="me-3" alt="">
+                    <img src="img/3.png" class="me-3" alt="">
+                    <img src="img/4.png" class="me-3" alt="">
+                    <img src="img/5.png" alt="">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 text-nowrap mb-2 text-center">
+                    <p>The Beauty eCommerce © 2022. All Rights Reserved</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <a href="#"><i class="fa-brands fa-facebook fa-xl"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok fa-xl"></i></a>
+                    <a href=""><i class="fa-brands fa-telegram fa-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="upButton">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
